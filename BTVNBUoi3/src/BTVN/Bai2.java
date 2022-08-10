@@ -1,0 +1,38 @@
+package BTVN;
+
+import java.util.Scanner;
+
+public class Bai2 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Nhap vao chuoi a:");
+        String a = scanner.nextLine();
+        System.out.println("Chuoi a vua nhap la: " + a);
+        System.out.print("chuoi sau khi xoa dau cach: ");
+        System.out.println(a.replaceAll("\\s+", " ").trim());
+        // xoa het cac so trong chuoi
+        for (int i = 0; i < a.length(); i++) {
+            if (a.charAt(i) >= '0' && a.charAt(i) <= '9') {
+                a = a.replace(String.valueOf(a.charAt(i)),"");//
+                i--;
+
+            }
+        }
+        System.out.print(" chuoi sau khi xoa so:");
+        System.out.println(a);
+        //viet hoa chu cai dau moi tu
+        String arr[] = a.split(" ");
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < arr.length; i++) {
+            String item = arr[i];
+            if (!item.equals("")) {
+                String ch = item.substring(0, 1).toUpperCase();
+                item = ch + item.substring(1).toLowerCase();
+                sb.append(item).append(" ");
+            }
+        }
+        System.out.print("chuoi sau khi chuan hoa:");
+        System.out.println(sb.toString());
+    }
+    }
+

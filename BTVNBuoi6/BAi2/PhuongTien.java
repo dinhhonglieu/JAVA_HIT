@@ -1,4 +1,4 @@
-package BAi2;
+package Buoi6.BAi2;
 
 import java.util.Scanner;
 
@@ -7,10 +7,18 @@ public class PhuongTien {
     private String tenChu;
     private int loaiXe;
     private int dungTich;
-    private int triGia;
-    private float thue;
+    private double triGia;
+    private double thue;
 
     public PhuongTien() {
+    }
+
+    public Scanner getScanner() {
+        return scanner;
+    }
+
+    public void setScanner(Scanner scanner) {
+        this.scanner = scanner;
     }
 
     public String getTenChu() {
@@ -37,19 +45,19 @@ public class PhuongTien {
         this.dungTich = dungTich;
     }
 
-    public int getTriGia() {
+    public double getTriGia() {
         return triGia;
     }
 
-    public void setTriGia(int triGia) {
+    public void setTriGia(double triGia) {
         this.triGia = triGia;
     }
 
-    public float getThue() {
+    public double getThue() {
         return thue;
     }
 
-    public void setThue(float thue) {
+    public void setThue(double thue) {
         this.thue = thue;
     }
 
@@ -63,11 +71,11 @@ public class PhuongTien {
         dungTich = scanner.nextInt();
         scanner.nextLine();
         System.out.print("Gia tri cua xe:");
-        triGia=scanner.nextInt();
+        triGia= scanner.nextDouble();
         scanner.nextLine();
-        if (triGia<100){
+        if (dungTich<100){
            thue=(triGia*2)/100;
-        } else if (triGia<200){
+        } else if (dungTich<200){
             thue=(triGia*6)/100;
         } else {
           thue=(triGia*10)/100;
@@ -75,7 +83,7 @@ public class PhuongTien {
 
     }
     public void output(){
-        System.out.printf("%-10d%-15s%-15d%-20d%-15f\n",loaiXe,tenChu,dungTich,triGia,thue);
+        System.out.printf("%-10d%-15s%-15d%-20.2f%-15.2f\n",loaiXe,tenChu,dungTich,triGia,thue);
     }
     @Override
     public String toString(){

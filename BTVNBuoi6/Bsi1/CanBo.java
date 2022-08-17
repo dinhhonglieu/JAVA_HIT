@@ -1,4 +1,4 @@
-package Bsi1;
+package Buoi6.Bsi1;
 
 import java.util.Scanner;
 

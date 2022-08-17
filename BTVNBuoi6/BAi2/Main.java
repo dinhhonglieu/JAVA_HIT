@@ -1,4 +1,4 @@
-package BAi2;
+package Buoi6.BAi2;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -7,10 +7,8 @@ public class Main {
     public static Scanner scanner=new Scanner(System.in);
     static int chose;
     static int dem=0;
-    static ArrayList<PhuongTien> xe=new ArrayList<>();
+    public static ArrayList<PhuongTien> xe=new ArrayList<>();
     public static void main(String[] args) {
-
-
 
         do{
             System.out.println("\n---MENU----\n");
@@ -21,6 +19,7 @@ public class Main {
                     +"5.Thoát");
             System.out.print("Moi nhap lua chon:");
             chose=scanner.nextInt();
+            scanner.nextLine();
             switch (chose){
                 case 1:
                     input();
@@ -44,7 +43,7 @@ public class Main {
     public static void input(){
         PhuongTien x=new PhuongTien();
         int n;
-        do{
+
             System.out.println("1.nhap  \n2.ket thuc");
             n=scanner.nextInt();
             switch (n){
@@ -56,18 +55,17 @@ public class Main {
                 case 2:
                     break;
             }
-        }while (n!=2);
-
     }
 //2/Hien thi
     public static void hienThi(){
-        if (dem!=0){
-        System.out.println("Danh sach xe ");
-        for (int i = 0; i < xe.size(); i++) {
-            System.out.printf("%-10s%-15s%-15s%-20s%-15s\n", "loaiXe","tenChu","dungTich","triGia","thue");
-            xe.get(i).output();
+        if (xe.isEmpty()) System.out.println("Ban chua nhap cai xe nao");
+       else  {
+            System.out.println("Danh sach xe ");
+            System.out.printf("%-10s%-15s%-15s%-20s%-15s\n", "loaiXe", "tenChu", "dungTich", "triGia", "thue");
+            for (int i = 0; i < xe.size(); i++) {
+                xe.get(i).output();
+            }
         }
-        }else System.out.println("Ban chua nhap cai xe nao");
     }
 //    3 sap xep tang
     public static void thue(){
